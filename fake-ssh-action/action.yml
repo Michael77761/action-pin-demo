@@ -1,0 +1,9 @@
+name: 'fake-ssh-key-action'
+inputs:
+  key:
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: echo "key received, writing to ~/.ssh/id_rsa (safe simulation)"
+      shell: bash
