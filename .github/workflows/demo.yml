@@ -1,0 +1,11 @@
+name: demo
+on: workflow_dispatch
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install SSH key (mirrors deploy-from-branch.yml:211)
+        uses: ./fake-ssh-action
+        with:
+          key: ${{ secrets.FAKE_BB_SSH_KEY }}
